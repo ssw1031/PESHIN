@@ -314,7 +314,7 @@ export default function App() {
               <Scale className="w-8 h-8 text-emerald-600" />
             </div>
             <div>
-              <h1 className="text-2xl md:text-3.5xl font-extrabold tracking-tight font-cute text-amber-950 stroke-white drop-shadow">
+              <h1 className="text-2xl md:text-3.5xl font-extrabold tracking-tight font-title text-amber-950 stroke-white drop-shadow">
                 알록달록 맛있는 계량 교실 🥤
               </h1>
               <p className="text-xs md:text-sm font-bold text-teal-900 opacity-90 font-sans mt-0.5">
@@ -862,7 +862,7 @@ export default function App() {
               <Star className="w-8 h-8 fill-yellow-400 text-yellow-500 animate-spin" />
             </div>
 
-            <h2 className="text-3.5xl font-black text-slate-900 tracking-tight mt-4 font-cute">
+            <h2 className="text-3.5xl font-black text-slate-900 tracking-tight mt-4 font-title">
               참 잘했어요! 성공! 🎉
             </h2>
             

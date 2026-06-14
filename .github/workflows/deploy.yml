@@ -1,0 +1,54 @@
+# GitHub Actions를 이용한 React + Vite 자동 배포 워크플로우
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # 혹은 master (사용하시는 기본 브랜치명에 맞게 실행됩니다)
+
+# GITHUB_TOKEN에 대한 쓰기 권한 부여
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 연속 실행 시 이전 빌드 취소
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build Application
+        run: npm run build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Vite의 기본 빌드 결과물 폴더는 dist 입니다.
+          path: './dist'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
