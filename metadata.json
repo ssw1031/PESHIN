@@ -1,0 +1,6 @@
+{
+  "name": "알록달록 계량 교실",
+  "description": "특수학급 학생들을 위해 직관적이고 아기자기한 디자인으로 제작된 수준별 음료 계량 학습 교구입니다. 물, 콜라, 주스를 계량컵에 채우며 수준별로 학습할 수 있습니다.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

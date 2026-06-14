@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Gowun+Dodum&family=Dongle:wght@400;700&display=swap');
+
+@theme {
+  --font-cute: "Gaegu", "Dongle", cursive, sans-serif;
+  --font-sans: "Gowun Dodum", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Custom whimsical animations for special education focus and joy */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+@keyframes bubbleUp {
+  0% { transform: translateY(100%) scale(0.6); opacity: 0; }
+  50% { opacity: 0.8; }
+  100% { transform: translateY(-20%) scale(1.1); opacity: 0; }
+}
+
+@keyframes dropFall {
+  0% { transform: translateY(-20px); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(120px); opacity: 0; }
+}
+
+@keyframes sparkle {
+  0%, 100% { transform: scale(0.8); opacity: 0.5; }
+  50% { transform: scale(1.2); opacity: 1; filter: drop-shadow(0 0 4px #fef08a); }
+}
+
+@keyframes stopBlink {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 2px #ef4444); }
+  50% { transform: scale(1.15); filter: drop-shadow(0 0 12px #ef4444); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-bubble-up {
+  animation: bubbleUp 1.8s ease-in-out infinite;
+}
+
+.animate-drop-fall {
+  animation: dropFall 0.8s ease-in infinite;
+}
+
+.animate-sparkle {
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+.animate-stop-blink {
+  animation: stopBlink 1s ease-in-out infinite;
+}
+
+.animate-shake {
+  animation: shake 0.3s ease-in-out infinite;
+}
+
+/* Rounded, cute borders and buttons */
+.cute-card {
+  border-radius: 24px;
+  box-shadow: 0 10px 0px 0px rgba(0, 0, 0, 0.05);
+}
+
+.cute-btn {
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.cute-btn:active {
+  transform: scale(0.92);
+}
+
+/* Custom scrollbars for friendly UI */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
